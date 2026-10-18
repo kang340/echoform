@@ -1,0 +1,49 @@
+{
+  "name": "echoform",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ECHOFORM · Voice Architecture — turn a voice into an explorable generative building.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --configLoader native",
+    "build": "tsc -b && vite build --configLoader native",
+    "preview": "vite preview --host 127.0.0.1 --configLoader native",
+    "test:analysis": "node tests/correlation.mjs",
+    "test:interactions": "node tests/interactions.mjs",
+    "test:capture": "node tests/mic-file.mjs",
+    "test:sharing": "node tests/exports-share.mjs",
+    "test:mobile": "node tests/mobile.mjs",
+    "test:perf": "node tests/performance.mjs",
+    "test:pitch": "node tests/pitch-low.mjs",
+    "film": "node tests/demo-video.mjs",
+    "test:regressions": "node tests/regressions.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "playwright-core": "^1.64.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kang340/echoform.git"
+  },
+  "homepage": "https://kang340.github.io/echoform/",
+  "bugs": {
+    "url": "https://github.com/kang340/echoform/issues"
+  }
+}

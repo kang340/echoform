@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+.npm-cache/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# local browser / test artifacts
+.chrome-profile*/
+shots/
+tests/artifacts/*.png
+tests/artifacts/*.mp4
+tests/artifacts/*.webm
+tests/artifacts/*.wav
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# local secrets and automated test output
+.env
+.env.*
+!.env.example
+.playwright-cli/
+output/
+tests/artifacts/
