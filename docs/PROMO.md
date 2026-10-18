@@ -82,6 +82,21 @@ Orbit it. Walk through it. Let the guide camera carry you. Take away a poster, a
 
 ## 5. 社交媒体
 
+### X / Twitter（模型制作署名版）
+
+用 DeepSeek V4.1 Flash 1017 做了个「声音建筑师」🎙️🏛️
+
+说句话，让音高、节奏与停顿长成一座可漫游的 3D 建筑。
+三种风格，支持海报/视频导出，音频全程本地处理。
+
+已开源👇
+体验：https://kang340.github.io/echoform/
+源码：https://github.com/kang340/echoform
+
+#DeepSeek #Threejs
+
+制作说明：初版程序化建筑建模与核心代码由 DeepSeek V4.1 Flash 1017 生成，后续完成工程优化、测试与开源部署。
+
 ### 小红书 / 微博
 
 > 我把我的一段哼唱，变成了一座教堂。

@@ -4,6 +4,8 @@
 
 **把一段声音，变成一座可以走进去的建筑。**
 
+**制作模型：DeepSeek V4.1 Flash 1017**（`DeepSeek-V4.1-Flash-1017`）。初版程序化建筑建模与核心代码由该模型生成，后续完成工程优化、测试与开源部署。
+
 [在线体验](https://kang340.github.io/echoform/) · [GitHub 仓库](https://github.com/kang340/echoform) · [贡献指南](CONTRIBUTING.md) · [优化记录](docs/OPTIMIZATION.md)
 
 ECHOFORM 是一个在浏览器里实时生成建筑的实验性产品。你说一句话、唱一个音、上传一段录音，系统会读取它的音高、响度、频谱、节奏、停顿与音色，把这些参数翻译成拱券、侧殿、柱列、旋梯、悬浮结构与光。建筑不是预设模型的换皮，也不是频谱条的旋转版本，而是从声音的结构里长出来的空间。
@@ -18,6 +20,8 @@ ECHOFORM 是一个在浏览器里实时生成建筑的实验性产品。你说�
 <summary><strong>EN · Project at a glance</strong></summary>
 
 **ECHOFORM** turns a voice into an explorable generative building. It analyses pitch, loudness, spectrum, rhythm, pauses and timbre, then derives a deterministic `DesignSpec`: arches, side halls, columns, rings, stairs, shards, particles, materials, lights and a timeline.
+
+**Built with DeepSeek V4.1 Flash 1017** (`DeepSeek-V4.1-Flash-1017`): the initial procedural architecture modeling and core code were generated with this model, followed by engineering improvements, testing and open-source deployment.
 
 - **Low frequency → thick arches / heavy base.**
 - **High frequency → slender columns / suspended shards.**
@@ -302,6 +306,8 @@ npm run test:perf          # 桌面/移动/压力场景
 ## 12. 团队 / 致谢
 
 概念、设计、工程、声音与文案：**ECHOFORM Studio**。
+初版程序化建筑建模与核心代码生成：**DeepSeek V4.1 Flash 1017**（`DeepSeek-V4.1-Flash-1017`）。
+后续工程优化、浏览器验收与开源部署：Codex 协助完成。
 特别感谢 Three.js、React、Vite 与开源字体社区。
 
 如果这座建筑让你想起某个声音，欢迎把它带走。
