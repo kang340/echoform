@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1920,height=1080">
+<title>ECHOFORM — Sound becomes space</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:'Microsoft YaHei';src:local('Microsoft YaHei')}
+@font-face{font-family:SimSun;src:local('SimSun')}
+@font-face{font-family:'Songti SC';src:local('SimSun')}
+@font-face{font-family:Instrument;src:url('assets/instrument-serif-latin-400-normal.woff2')}
+@font-face{font-family:Manrope;src:url('assets/manrope-latin-wght-normal.woff2');font-weight:200 800}
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#070706;color:#efe9dc}
+body{font-family:Manrope,'Microsoft YaHei',sans-serif}#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#070706}
+.scene{position:absolute;inset:0;opacity:0;overflow:hidden}.scene:first-of-type{opacity:1}.footage{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover}.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,6,.96) 0%,rgba(7,7,6,.82) 27%,rgba(7,7,6,.04) 67%),linear-gradient(0deg,rgba(7,7,6,.92),transparent 38%)}
+.gallery .shade{background:linear-gradient(0deg,rgba(7,7,6,.96),rgba(7,7,6,.15) 42%,rgba(7,7,6,.07) 75%,rgba(7,7,6,.65))}
+.mast{position:absolute;top:72px;left:110px;right:110px;display:flex;justify-content:space-between;align-items:center;z-index:30;color:#efe9dc}.brand{font-size:28px;letter-spacing:.3em}.meta{font-size:22px;letter-spacing:.18em;color:#d9c79d}.topline{position:absolute;left:110px;right:110px;top:132px;height:2px;background:rgba(217,199,157,.36);z-index:30}
+.copy{position:absolute;left:110px;top:292px}.eyebrow{font-size:23px;letter-spacing:.18em;color:var(--accent,#d9c79d);margin-bottom:34px}.cn{font-family:'SimSun','Songti SC',serif;font-weight:400;letter-spacing:.03em;line-height:1.22;font-size:100px;margin:0}.en{font-family:Instrument,serif;font-size:48px;color:#d9c79d;margin:28px 0 0}.body{font-size:29px;line-height:1.8;color:#d9d3c7;margin-top:32px}.rule{height:3px;width:112px;background:var(--accent,#d9c79d);margin-top:38px;transform-origin:left}
+.badge{position:absolute;left:110px;bottom:94px;display:flex;align-items:center;gap:18px;font-size:23px;letter-spacing:.08em}.dot{width:10px;height:10px;background:var(--accent,#d9c79d);box-shadow:0 0 20px var(--accent,#d9c79d);border-radius:50%}.index{position:absolute;right:110px;bottom:90px;font-family:Instrument,serif;font-size:46px;color:var(--accent,#d9c79d)}
+.gallery .copy{top:auto;bottom:150px}.gallery .cn{font-size:88px}.gallery .eyebrow{margin-bottom:16px}.gallery .en{font-size:38px;margin-top:14px;color:var(--accent,#d9c79d)}.caption{position:absolute;right:110px;bottom:170px;font-size:28px;max-width:560px;line-height:1.8;color:#e4ded2;text-align:right}.style-label{font-size:23px;letter-spacing:.2em;color:var(--accent,#d9c79d);position:absolute;left:110px;top:184px}
+.wave{display:flex;align-items:center;gap:7px;height:80px;position:absolute;left:110px;top:764px}.wave i{display:block;width:4px;background:#d9c79d;transform-origin:center;height:40px}.ghost{position:absolute;font-family:Instrument,serif;font-size:230px;letter-spacing:-.05em;color:rgba(217,199,157,.12);right:110px;bottom:72px}.feature-row{display:flex;gap:16px;margin-top:40px}.feature{border:2px solid rgba(217,199,157,.55);padding:12px 20px;font-size:23px}
+#outro .footage{opacity:.32;filter:none}#outro .shade{background:linear-gradient(90deg,rgba(7,7,6,.85),rgba(7,7,6,.5)),linear-gradient(0deg,#070706,transparent 60%)}
+#outro .copy{top:270px}#outro .wordmark{font-family:Instrument,serif;font-size:170px;letter-spacing:-.025em;line-height:1;margin:0}#outro .cn{font-size:50px;margin-top:30px}.credit{margin-top:38px;font-size:29px;color:#d9c79d}.links{margin-top:46px;display:flex;gap:70px}.link-label{font-size:20px;color:#b3ac9e;letter-spacing:.15em;margin-bottom:12px}.link-url{font-size:29px;color:#efe9dc}.open{position:absolute;right:110px;top:207px;border:2px solid #d9c79d;color:#d9c79d;font-size:22px;letter-spacing:.12em;padding:14px 23px}.corner{position:absolute;width:34px;height:34px;border-color:rgba(217,199,157,.72);border-style:solid;z-index:30}.tl{top:173px;left:58px;border-width:2px 0 0 2px}.br{right:58px;bottom:55px;border-width:0 2px 2px 0}.progress{position:absolute;bottom:35px;left:110px;height:2px;width:1700px;background:rgba(217,199,157,.2);z-index:30}.progress span{display:block;height:100%;background:#d9c79d;transform-origin:left}
+</style>
+</head>
+<body><main id="root" data-composition-id="main" data-start="0" data-duration="32" data-width="1920" data-height="1080" data-fps="30">
+<section class="scene" id="intro">
+<video id="video-hero" class="footage clip" src="assets/hero.mp4" data-start="0" data-duration="4.6" data-track-index="0" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="copy"><div class="eyebrow">VOICE → ARCHITECTURE</div><h1 class="cn">让声音，<br>成为建筑。</h1><div class="en">Every voice has a space.</div><div class="rule"></div></div>
+<div class="badge"><span class="dot"></span> ECHOFORM · 声音建筑师</div><div class="index">01 / 07</div>
+</section>
+<section class="scene" id="growth">
+<video id="video-growth" class="footage clip" src="assets/growth.mp4" data-start="4" data-duration="7.6" data-track-index="1" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="copy"><div class="eyebrow">FROM SIGNAL TO STRUCTURE</div><h2 class="cn">一句话，<br>长出一座空间。</h2><div class="body">音高 · 节奏 · 音色<br>成为形体、层次与光。</div></div><div class="wave" data-layout-ignore></div>
+<div class="badge"><span class="dot"></span> 录音 / 上传音频 / 聆听示例</div><div class="index">02 / 07</div>
+</section>
+<section class="scene gallery" id="crystal" style="--accent:#d9c79d">
+<video id="video-crystal" class="footage clip" src="assets/crystal.mp4" data-start="11" data-duration="4.6" data-track-index="2" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="style-label">THREE STYLES / 01</div><div class="copy"><div class="eyebrow">CRYSTAL SANCTUM</div><h2 class="cn">水晶圣殿</h2><div class="en">Light through the bones of sound.</div></div><div class="caption">尖拱与晶簇交织，<br>让光穿过声音的骨骼。</div><div class="index">03 / 07</div>
+</section>
+<section class="scene gallery" id="machine" style="--accent:#76e5ff">
+<video id="video-machine" class="footage clip" src="assets/machine.mp4" data-start="15" data-duration="4.6" data-track-index="3" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="style-label">THREE STYLES / 02</div><div class="copy"><div class="eyebrow">NEO MACHINE</div><h2 class="cn">未来机械</h2><div class="en">A machine built for the signal.</div></div><div class="caption">承重环、金属骨架与光栅，<br>让节奏成为空间的语法。</div><div class="index">04 / 07</div>
+</section>
+<section class="scene gallery" id="organic" style="--accent:#f2b0a0">
+<video id="video-organic" class="footage clip" src="assets/organic.mp4" data-start="19" data-duration="4.6" data-track-index="4" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="style-label">THREE STYLES / 03</div><div class="copy"><div class="eyebrow">FLUID ORGANIC</div><h2 class="cn">流体有机</h2><div class="en">A space that breathes.</div></div><div class="caption">弧面、薄膜与柔软的腔体，<br>让建筑缓缓呼吸。</div><div class="index">05 / 07</div>
+</section>
+<section class="scene" id="explore">
+<video id="video-interior" class="footage clip" src="assets/interior.mp4" data-start="23" data-duration="4.6" data-track-index="5" muted playsinline preload="auto"></video><div class="shade"></div>
+<div class="copy"><div class="eyebrow">ENTER YOUR OWN VOICE</div><h2 class="cn">走进你的声音。</h2><div class="body">自由漫游，发现每一个角落。</div><div class="feature-row"><span class="feature">空间漫游</span><span class="feature">海报导出</span><span class="feature">视频导出</span></div><div class="rule"></div></div>
+<div class="badge"><span class="dot"></span> 浏览器里的声音建筑实验</div><div class="index">06 / 07</div>
+</section>
+<section class="scene" id="outro">
+<img class="footage" data-layout-allow-overflow src="assets/hero-still.png" alt="ECHOFORM crystal architecture"><div class="shade"></div><div class="open">OPEN SOURCE · MIT</div>
+<div class="copy"><div class="eyebrow">SOUND BECOMES SPACE.</div><h2 class="wordmark">ECHOFORM</h2><div class="cn">把你的声音，留在空间里。</div><div class="credit">建模与初版代码 · DeepSeek V4.1 Flash 1017</div><div class="links"><div><div class="link-label">TRY IT LIVE</div><div class="link-url">kang340.github.io/echoform</div></div><div><div class="link-label">EXPLORE ON GITHUB</div><div class="link-url">github.com/kang340/echoform</div></div></div></div>
+<div class="badge"><span class="dot"></span> 给你的下一句话，一座建筑。</div><div class="index">07 / 07</div>
+</section>
+<header class="mast"><span class="brand">ECHOFORM</span><span class="meta">GENERATIVE ARCHITECTURE / 声音建筑师</span></header><div class="topline"></div><div class="corner tl" data-layout-ignore></div><div class="corner br" data-layout-ignore></div><div class="progress" data-layout-ignore><span></span></div>
+<audio id="soundtrack" class="clip" src="assets/soundtrack.m4a" data-start="0" data-duration="32" data-track-index="8" data-volume="0.9" preload="auto"></audio>
+</main>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+const scenes=['intro','growth','crystal','machine','organic','explore','outro'];
+const starts=[0,4,11,15,19,23,27];
+for(let i=0;i<48;i++){const b=document.createElement('i');b.style.height=(12+Math.abs(Math.sin(i*1.73)*Math.cos(i*.27))*63)+'px';document.querySelector('.wave').appendChild(b)}
+scenes.forEach((id,i)=>{
+ const s=starts[i],q='#'+id;
+ if(i){tl.to('#'+scenes[i-1]+' .copy,#'+scenes[i-1]+' .badge,#'+scenes[i-1]+' .caption,#'+scenes[i-1]+' .style-label,#'+scenes[i-1]+' .index',{opacity:0,duration:.2,ease:'sine.inOut'},s-.1);tl.fromTo(q,{opacity:0},{opacity:1,duration:.55,ease:'sine.inOut'},s);tl.to('#'+scenes[i-1],{opacity:0,duration:.55,ease:'sine.inOut'},s+.05)}
+ tl.fromTo(q+' .eyebrow',{opacity:0,x:-24},{opacity:1,x:0,duration:.65,ease:'power2.out'},s+.22);
+ tl.fromTo(q+' h1,'+q+' h2',{opacity:0,y:44},{opacity:1,y:0,duration:.85,ease:'power3.out'},s+.38);
+ tl.fromTo(q+' .en,'+q+' .body,'+q+' .cn:not(h1):not(h2)',{opacity:0,y:18},{opacity:1,y:0,duration:.7,stagger:.1,ease:'sine.out'},s+.7);
+ tl.fromTo(q+' .badge,'+q+' .caption,'+q+' .feature-row,'+q+' .credit,'+q+' .links',{opacity:0},{opacity:1,duration:.65,stagger:.15,ease:'power1.out'},s+.9);
+ if(document.querySelector(q+' .rule'))tl.fromTo(q+' .rule',{scaleX:0},{scaleX:1,duration:.8,ease:'expo.out'},s+.8);
+});
+tl.fromTo('.wave i',{scaleY:.25},{scaleY:1,duration:.48,stagger:.018,repeat:8,yoyo:true,ease:'sine.inOut'},4.8);
+tl.fromTo('#outro .footage',{scale:1.12},{scale:1,duration:5,ease:'none'},27);
+tl.fromTo('.progress span',{scaleX:0},{scaleX:1,duration:32,ease:'none'},0);
+tl.to('#outro,.mast,.topline,.corner,.progress',{opacity:0,duration:.65,ease:'sine.inOut'},31.35);
+window.__timelines.main=tl;
+tl.seek(0);
+</script></body></html>

@@ -1,0 +1,12 @@
+.hyperframes/bin/
+.hyperframes/*.tgz
+.hyperframes/artifacts/
+.hyperframes/cache/
+review/
+renders/
+node_modules/
+.hyperframes/video-state*
+.hyperframes/history-id
+.hyperframes/check-result.json
+assets/*-still.png
+!assets/hero-still.png

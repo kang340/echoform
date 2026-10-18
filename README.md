@@ -60,6 +60,11 @@ npm install && npm run dev   # http://127.0.0.1:5178/
 
 ## 演示
 
+[![播放 ECHOFORM 宣传片](media/ECHOFORM-promo-cover.png)](media/ECHOFORM-promo-X.mp4)
+
+- **X 宣传短片**：[`media/ECHOFORM-promo-X.mp4`](media/ECHOFORM-promo-X.mp4)（32 秒，1920×1080 / 30fps，含原创声景与 DeepSeek V4.1 Flash 1017 署名）
+- **短片工程与发布文案**：[`promo-video/`](promo-video/)
+
 [![播放 32 秒演示影像](media/screenshots/ready.png)](media/ECHOFORM-demo.mp4)
 
 - **32 秒演示影像**：[`media/ECHOFORM-demo.mp4`](media/ECHOFORM-demo.mp4)（1280×720，H.264 + AAC，含原创声景）
